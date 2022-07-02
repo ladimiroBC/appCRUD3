@@ -1,0 +1,21 @@
+<h2>Componente de creacion</h2>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="postForm" novalidate>
+
+    <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <input formControlName="titulo" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Contenido</label>
+        <input formControlName="contenido" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Autor</label>
+        <input formControlName="autor" type="text" class="form-control" required>
+    </div>
+    <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary">Almacenar</button>
+</form>
+
+
+

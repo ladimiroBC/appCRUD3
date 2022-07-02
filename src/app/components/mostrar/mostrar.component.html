@@ -1,0 +1,33 @@
+
+<div class="d-grip gap-2 mt-4">
+    <a routerLink="/crear" class="btn btn-primary" type="button">Crear</a>
+</div>
+
+<table class="table table-hover table-striped">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>Titulo</th>
+            <th>Contendio</th>
+            <th>Autor</th>
+            <th>Accciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let post of Posts">
+            <td>{{post.titulo}}</td>
+            <td>{{post.contenido}}</td>
+            <td>{{post.autor}}</td>
+            <td>
+                <button routerLink="/editar/{{post.id}}" 
+                class="btn btn-outline-secondary me-2">
+                <i class="fa-solid fa-file-pen"></i></button>
+                <button (click)="delete(post)"
+                class="btn btn-outline-danger">
+                <i class="fa-solid fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
